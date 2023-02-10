@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<title>WeGo Log In Page</title>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<br></br>
+
+<body>
+  <br></br>
+  <center>
+    <img class="logo" src="WeGo.png" alt="WeGo_logo">
+    <br></br>
+    <h1 class="title">Welcome to WeGo!</h1>
+  </center>
+  <br></br>
+  <center>
+    <div class="box" method="POST" name="LoginForm">
+      <h1 class="textInForm">Log In</h1>
+      <div class="container">
+        <br></br>
+        <label for="username" class="textInForm"><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" id="username">
+        <br></br>
+        <label for="password" class="textInForm"><b>Password:</b></label>
+        <input type="password" placeholder="Enter Password" id="password">
+        <br></br>
+        <button type="submit" class="boxButton" onclick="validateUser()">Log in</button>
+        <br></br>
+        Don't have an account?
+        <a href="signup_page.html">Sign up</a>
+      </div>
+    </div>
+  </center>
+</body>
+<script>
+  function validateUser() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    if (username == "") {
+      alert("Please input your username.");
+      document.LoginForm.username.focus();
+      window.location.href = "index.html";
+      return false;
+    }
+
+    else if (password == "") {
+      alert("Please input your password.");
+      document.LoginForm.password.focus();
+      window.location.href = "index.html";
+      return false;
+    }
+
+    else if (username == "wego22" && password == "wego22") {
+      alert("Welcome, " + username);
+      window.location.href = "ordering_page.html";
+    }
+
+    else {
+      alert("Incorrect username/password!");
+      window.location.href = "index.html";
+    }
+  }
+</script>
+
+</html>
