@@ -2,7 +2,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibXNjeWhldiIsImEiOiJjbGRjZ2NxMWcwNHlqM3Ftdnk5b
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v12',
-    center: [-122.662323, 45.523751], // starting position
+    center: [-97.753061, 30.22897], // starting position
     zoom: 12
 });
 // set the bounds of the map
@@ -14,7 +14,7 @@ map.setMaxBounds(bounds);
 
 // an arbitrary start will always be the same
 // only the end or destination will change
-const start = [-122.662323, 45.523751];
+const start = [-97.753061, 30.22897];//saint edwards at start location
 
 // create a function to make a directions request
 async function getRoute(end) {
@@ -93,9 +93,9 @@ map.on('load', () => {
         }
     });
     map.on('click', (event) => {
-        const coords = Object.keys(event.lngLat).map((key) => event.lngLat[key]);
+        // const coords = Object.keys(event.lngLat).map((key) => event.lngLat[key]);
         const end = {
-            type: 'FeatureCollection',
+            type: 'FeatureCollecTRhtion',
             features: [
                 {
                     type: 'Feature',
