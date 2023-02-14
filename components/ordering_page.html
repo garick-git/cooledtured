@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html>
-<title>WeGo Order Submission Page</title>
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="../styles/style.css" rel="stylesheet" type="text/css" />
-</head>
-<br></br>
-  <br></br>
-  <center>
-    <div class="orderInstructions">
-      <div class="orderTitle">
-        <h1>Place Your Order</h1><br></br>
-      </div>
-      <div class="orderText">
-        Please complete the form below to submit an order.
-      </div>
-      <div class="orderFormBox">
-        <form class="orderForm">
-          <div class="formQuestions">
-            <label for="fname"><b>First Name:</b></label>
-            <input type="text" placeholder="Enter First Name" id="fname">
-          </div>
-          <div class="formQuestions">
-            <label for="lname"><b>Last Name:</b></label>
-            <input type="text" placeholder="Enter Last Name" id="lname">
-          </div>
-          <div class="formQuestions">
-            <label for="quant"><b>Quantity:</b></label>
-            <input type="number" placeholder="Quantity" id="quant">
-          </div>
-          <div class="formQuestions">
-            <label for="email"><b>Email Address:</b></label>
-            <input type="email" placeholder="Enter Email Address" id="email">
-          </div>
-          <div class="deliverTo">
-            <label for="address"><b>Deliver To:</b></label>
-            <input type="text" placeholder="Enter Delivery Address" id="address">
-          </div>
-          <div class="orderButtonDiv">
-            <button type="submit" class="orderButton">Submit order</button>
-          </div>
-        </form>
-      </div>
-      <div class="map">
-        <img class="mapImage" src="../static/mapImage.png" alt="mapImage">
-      </div>
-    </div>
-</body>
 
+  <button class="signout" role=button onclick="window.location.href='index.html'">Log Out</button>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>WeGo Order Submission Page</title>
+  <link href="../styles/style2.css" rel="stylesheet" type="text/css"/>
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+
+  </head>
+
+<body>
+
+  <header>
+
+    <div>
+    <img id="logo" style="margin-left: 2.9%;" src="../static/WeGo.png" alt="Logo">
+    <h1 style="margin-left: 2%; font-size: 45px; color:#d9d9d9;">Place Your Order</h1>
+    </div>
+ 
+  </header>
+
+
+  <div class="vertical-border"></div>
+
+
+  <form class="box">
+
+    <p></p>
+    <label for="first-name">First Name:</label>
+    <input type="text" placeholder="Enter First Name" id="first-name" required>
+
+    <label for="last-name">Last Name:</label>
+    <input type="text" placeholder="Enter Last Name" id="last-name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" placeholder="Enter Email Address"id="email" required>
+
+    <label for="quantity" >Quantity:</label>
+    <input type="text" id="quantity" placeholder="Enter Quantity" name="quantity">
+
+    <label for="deliver-to">Deliver To:</label>
+    <input type="text" placeholder="Enter Delivery Address" id="deliver-to" required>
+
+    <p> </p>
+    <h2> </h2>
+
+    <!-- <input type="submit" value="Submit Order" style="margin-left: 2.5%;"> -->
+
+    <div class="orderButtonDiv">
+      <button type="submit" class="orderButton">Submit Order</button>
+    </div>
+
+   
+  
+  </form>
+
+  <body>
+    <div id='map'></div>
+  </div>
+
+  
+
+  <script src="../scripts/TrackingPage.js"></script>
+
+</body>
 </html>
+
