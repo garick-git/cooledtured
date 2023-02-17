@@ -79,20 +79,18 @@
         })
         .then(response => {
           if (response.ok) {
-            console.log(response)
-            console.log('Success:', response.data);
-            // alert('Logged in successfully!'); // Alert the user on successful login
-            // window.location.href = '/order'; 
-            return response.json();
-          } else if (response.status === 401) {
-            throw new Error('Invalid username or password');
+            response.json().then(data => {
+              console.log('Success:', data.message)
+              alert('Logged in successfully!')
+              window.location.href = '/order'
+            })
           } else {
-            throw new Error('Unexpected error')
+            throw new Error('Invalid username or password');
           }
         })
         .catch(error => {
           console.error('Error:', error);
-          alert(error.message); // Alert the user on error
+          alert('Invalid username or password. Please try again.'); // Alert the user on error
         });
       });
 
