@@ -66,8 +66,10 @@
         const password = document.getElementById('password').value;
 
         const loginData = {
-          username: username,
-          password: password
+          fName: this.fName,
+          lName: this.lName,
+          username: this.username,
+          password: this.password
         };
 
         fetch('/users', {
