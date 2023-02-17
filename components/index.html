@@ -36,7 +36,7 @@
         <input type="password" placeholder=" *********" id="password">
         <br></br>
         
-        <button type="submit" class="boxButton" onclick="validateUser()">Log in</button>
+        <button type="submit" class="boxButton" id="submit-button" onclick="validateUser()">Log in</button>
         <br></br>
     
         Don't have an account?
@@ -47,9 +47,9 @@
 </body>
 
 <script>
-    const a = document.getElementById('myButton');
+  const button = document.getElementById('myButton');
   button.addEventListener('click', () => {
-    window.location.href = '/signup';
+  window.location.href = '/signup';
   });
 </script>
 
