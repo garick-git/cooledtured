@@ -21,7 +21,7 @@
   </center>
   <br>
   <center>
-    <div class="box" method="POST" name="LoginForm">
+    <form class="box" method="POST" name="LoginForm">
       <h1 class="textInForm">Log In</h1>
       <div class="container">
         <br>
@@ -40,14 +40,15 @@
         <br></br>
     
         Don't have an account?
-        <button id="myButton">Sign Up</button>
+        <button id="signUpPageButton">Sign Up</button>
       </div>
-    </div>
+    </form>
   </center>
 </body>
 
 <script>
-  const button = document.getElementById('myButton');
+  // Allows sign up button to send user to sign up page
+  const button = document.getElementById('signUpPageButton');
   button.addEventListener('click', () => {
   window.location.href = '/signup';
   });
@@ -55,7 +56,7 @@
 
 
   <script>
-
+    // Log in logic for front end
       const submitButton = document.getElementById('submit-button');
 
       submitButton.addEventListener('click', (event) => {
@@ -86,7 +87,7 @@
         .then(data => {
           console.log('Success:', data);
           alert('Logged in successfully!'); // Alert the user on successful login
-          window.location.href = 'ordering_page.html'; 
+          window.location.href = '/order'; 
         })
         .catch(error => {
           console.error('Error:', error);
