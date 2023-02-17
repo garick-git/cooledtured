@@ -63,13 +63,18 @@
         <br></br>
         
         Already have an account?
-       
-        <a href="index.html">Log in</a>
+        <button id="directLogIn">Log In</button>
     </form>
-
   </center>
 
 </body>
+
+  <script>
+    const button = document.getElementById('directLogIn');
+    button.addEventListener('click', () => {
+      window.location.href = '/login';
+    });
+  </script>
 
   <script>
     const submitButton = document.getElementById('signUp');
