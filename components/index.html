@@ -82,8 +82,8 @@
             return response.json().then(data => {
               if (data.message === 'Login successful') {
                 console.log('Success:', data.message);
-                // alert('Logged in successfully!'); // Alert the user on successful login
-                // window.location.href = '/order';
+                alert('Logged in successfully!'); // Alert the user on successful login
+                window.location.href = '/order';
               } else {
                 throw new Error(data.error);
               }
