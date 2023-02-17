@@ -79,17 +79,20 @@
         })
         .then(response => {
           if (response.ok) {
+            console.log(response)
             console.log('Success:', response.data);
             alert('Logged in successfully!'); // Alert the user on successful login
             window.location.href = '/order'; 
             return response.json();
-          } else {
+          } else if (response.status === 401) {
             throw new Error('Invalid username or password');
+          } else {
+            throw new Error('Unexpected error')
           }
         })
         .catch(error => {
           console.error('Error:', error);
-          alert('Invalid username or password. Please try again.'); // Alert the user on error
+          alert(error.message); // Alert the user on error
         });
       });
 
