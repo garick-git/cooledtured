@@ -21,33 +21,42 @@
   </center>
   <br>
   <center>
-    <div class="box" method="POST" name="LoginForm">
+    <form class="box" action="/login" method="POST" name="LoginForm">
       <h1 class="textInForm">Log In</h1>
       <div class="container">
         <br>
 
         <div class="username">
         <label for="username" class="textInForm" ><b>Username:</b></label>
+<<<<<<< HEAD
         <input type="text" placeholder=" johndoe" id="username" required>
+=======
+        <input type="text" placeholder=" johndoe" id="username" name="username">
+>>>>>>> 63aa8cfffdc16bcc1bc91f1a7f612c7e01f3dd07
         <br></br>
         </div>
        
         <label for="password" class="textInForm"><b>Password:</b></label>
+<<<<<<< HEAD
         <input type="password" placeholder=" *********" id="password" required>
+=======
+        <input type="password" placeholder=" *********" id="password" name="password">
+>>>>>>> 63aa8cfffdc16bcc1bc91f1a7f612c7e01f3dd07
         <br></br>
         
         <button type="submit" class="boxButton" id="submit-button">Log in</button>
         <br></br>
     
         Don't have an account?
-        <button id="myButton">Sign Up</button>
+        <button id="signUpPageButton">Sign Up</button>
       </div>
-    </div>
+    </form>
   </center>
 </body>
 
 <script>
-  const button = document.getElementById('myButton');
+  // Allows sign up button to send user to sign up page
+  const button = document.getElementById('signUpPageButton');
   button.addEventListener('click', () => {
   window.location.href = '/signup';
   });
@@ -55,7 +64,7 @@
 
 
   <script>
-
+    // Log in logic for front end
       const submitButton = document.getElementById('submit-button');
 
       submitButton.addEventListener('click', (event) => {
@@ -69,7 +78,7 @@
           password: password
         };
 
-        fetch('/users', {
+        fetch('/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -78,19 +87,20 @@
         })
         .then(response => {
           if (response.ok) {
+            console.log(response)
+            console.log('Success:', response.data);
+            alert('Logged in successfully!'); // Alert the user on successful login
+            window.location.href = '/order'; 
             return response.json();
-          } else {
+          } else if (response.status === 401) {
             throw new Error('Invalid username or password');
+          } else {
+            throw new Error('Unexpected error')
           }
-        })
-        .then(data => {
-          console.log('Success:', data);
-          alert('Logged in successfully!'); // Alert the user on successful login
-          window.location.href = 'ordering_page.html'; 
         })
         .catch(error => {
           console.error('Error:', error);
-          alert('Invalid username or password. Please try again.'); // Alert the user on error
+          alert(error.message); // Alert the user on error
         });
       });
 
