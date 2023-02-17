@@ -79,9 +79,9 @@
           },
           body: JSON.stringify(loginData)
         })
-        .then(response, data => {
+        .then(response => {
           if (response.ok) {
-            console.log('Success:', data);
+            console.log('Success:', response.data);
             alert('Logged in successfully!'); // Alert the user on successful login
             window.location.href = '/order'; 
             return response.json();
