@@ -79,17 +79,15 @@
           },
           body: JSON.stringify(loginData)
         })
-        .then(response => {
+        .then(response, data => {
           if (response.ok) {
+            console.log('Success:', data);
+            alert('Logged in successfully!'); // Alert the user on successful login
+            window.location.href = '/order'; 
             return response.json();
           } else {
             throw new Error('Invalid username or password');
           }
-        })
-        .then(data => {
-          console.log('Success:', data);
-          alert('Logged in successfully!'); // Alert the user on successful login
-          window.location.href = '/order'; 
         })
         .catch(error => {
           console.error('Error:', error);
