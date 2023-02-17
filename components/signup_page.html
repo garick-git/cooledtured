@@ -53,9 +53,6 @@
         
         <br></br>
 
-        <!-- <label for="password" class="textInForm"><b>Confirm Password:</b></label>
-        <input type="password" placeholder="Confirm Password" id="password"> -->
-
         <label for="confirm-password" class="textInForm"><b>Confirm Password:</b></label>
         <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirm-password" required oninput="check(this)">
         <span id="message"></span>
@@ -94,7 +91,7 @@
         password: password
       };
 
-      fetch('/signup', {
+      fetch('/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -117,57 +114,15 @@
         alert('There was an error creating the user. Please try again.'); // Alert the user on error
       });
     });
-
-
-      // function signUpUser() {
-
-      //   var firstname = document.getElementById("firstname").value;
-      //   var lastname = document.getElementById("lastname").value;
-      //   var email = document.getElementById("email").value;
-      //   var username = document.getElementById("username").value;
-      //   var password = document.getElementById("password").value;
-
-      //   // Create a new XMLHttpRequest object
-      //   var xhr = new XMLHttpRequest();
-
-      //   // Set up a POST request with the specified endpoint
-      //   xhr.open('POST', '');
-
-
-      //   // Set the request header to specify the data type being sent
-      //   xhr.setRequestHeader('Content-Type', 'application/json');
-
-
-
-      //   // Define a callback function to handle the response
-      //   xhr.onload = function() {
-      //     if (xhr.status === 200) {
-      //       // Request was successful, do something with the response
-      //       console.log(xhr.responseText);
-      //     } else {
-      //       // Request failed, handle the error
-      //       console.log('Request failed. Returned status of ' + xhr.status);
-      //     }
-      //   };
-
-      //   // Set up the data to be sent in the POST request
-      //   var data = { 
-      //     firstname: "",
-      //     lastname: "", 
-      //     email: "",
-      //     password: "",  
-      //   };
-
-      //   // Send the POST request with the data as a JSON string
-      //   xhr.send(JSON.stringify(data));
-      // }
   </script>
+
+
 
   <script>
       function check(input) {
         if (input.value != document.getElementById('password').value) {
-        input.setCustomValidity('Passwords do not match');
-        document.getElementById('message').innerHTML = 'Passwords do not match';
+        input.setCustomValidity('\nPasswords do not match');
+        document.getElementById('message').innerHTML = '\nPasswords do not match';
       } else {
         input.setCustomValidity('');
         document.getElementById('message').innerHTML = '';
