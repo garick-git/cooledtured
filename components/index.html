@@ -78,12 +78,16 @@
           body: JSON.stringify(loginData)
         })
         .then(response => {
-          if (response.ok) {
-            response.json().then(data => {
-              console.log('Success:', data.message)
-              alert('Logged in successfully!')
-              window.location.href = '/order'
-            })
+          if (response.status === 200) {
+            return response.json().then(data => {
+              if (data.message === 'Login successful') {
+                console.log('Success:', data.message);
+                // alert('Logged in successfully!'); // Alert the user on successful login
+                // window.location.href = '/order';
+              } else {
+                throw new Error(data.error);
+              }
+            });
           } else {
             throw new Error('Invalid username or password');
           }
