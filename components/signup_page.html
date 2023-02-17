@@ -33,11 +33,11 @@
 
         <div id="signuptext">
         <label for="firstname" class="firstname"><b>First Name:</b></label>
-        <input type="text" placeholder="Enter First Name" id="firstname">
+        <input type="text" placeholder="Enter First Name" id="fName">
         
         <br></br>
         <label for="lastname" class="lastname"><b>Last Name:</b></label>
-        <input type="text" placeholder="Enter Last Name" id="lastname">
+        <input type="text" placeholder="Enter Last Name" id="lName">
         
         <br></br>
         <label for="email" class="textInForm"><b>Email:</b></label>
@@ -80,15 +80,15 @@
     submitButton.addEventListener('click', (event) => {
       event.preventDefault();
 
-      const firstName = document.getElementById('firstname').value;
-      const lastName = document.getElementById('lastname').value;
+      const firstName = document.getElementById('fName').value;
+      const lastName = document.getElementById('lName').value;
       const email = document.getElementById('email').value;
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
 
       const userData = {
-        firstName: firstName,
-        lastName: lastName,
+        fName: firstName,
+        lName: lastName,
         email: email,
         username: username,
         password: password

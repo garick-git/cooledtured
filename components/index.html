@@ -76,4 +76,47 @@
   }
 </script>
 
+  <script>
+
+      const submitButton = document.getElementById('submit-button');
+
+      submitButton.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        const loginData = {
+          username: username,
+          password: password
+        };
+
+        fetch('/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(loginData)
+        })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Invalid username or password');
+          }
+        })
+        .then(data => {
+          console.log('Success:', data);
+          alert('Logged in successfully!'); // Alert the user on successful login
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Invalid username or password. Please try again.'); // Alert the user on error
+        });
+      });
+
+  </script>
+
+
+
 </html>
