@@ -2,7 +2,6 @@
 <html style="zoom: 85%">
 <head>
   <link rel="icon" type="image/x-icon" href="../styles/WeGo.png">
-  <button class="signout" role=button onclick="window.location.href='/logout'">Log Out</button>
   <br>
  
   
@@ -19,10 +18,7 @@
   </head>
 
 <body>
-  <br>
-  <br>
   <header>
-
     <div>
     <img id="logo" style="margin-left: 2.9%;" src="../styles/WeGo.png" alt="Logo">
     <h1 style="margin-left: 2%; font-size: 45px; color:#d9d9d9;">Place Your Order</h1>
@@ -35,10 +31,13 @@
 
   <form class="box">
 
-    <label style="font-size: x-large;">User Information</label>
+   
+   <!-- Temp-->
+    <label style="font-size: x-large;">Welcome First Name + Last Name!</label>
     <br>
     <br>
-    <label for="first-name">First Name:</label>
+
+    <!-- <label for="first-name">First Name:</label>
     <input type="text" placeholder="John" style="width:60%;" id="first-name" required>
 
     <label for="last-name">Last Name:</label>
@@ -46,11 +45,11 @@
 
     <label for="email">Email Address:</label>
     <input type="email" placeholder="johndoe@email.com" style="width:80%;" id="email" required>
-    <br>
+    <br> -->
     <hr>
     <br>
  
-    <label for="quantity" >Quantity:</label>
+    <label for="quantity">Quantity:</label>
     <input type="number" id="quantity" placeholder="Enter Quantity" style="width: 35%;" name="quantity">
     <br>
     <hr>
@@ -156,10 +155,46 @@
 
   <script src="../scripts/TrackingPage.js"></script>
 
+  <script>
+      // Make a POST request to the '/order' endpoint
+      fetch('/order', {
+        method: 'POST',
+        body: JSON.stringify({ /* any necessary data */ }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+
+
+
+      .then(response => response.json())
+      .then(data => {
+        // Extract the latitude and longitude from the response data
+        const { longitude, latitude} = data;
+
+        // Create the Mapbox API using the latitude and longitude
+        mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+        const map = new mapboxgl.Map({
+          container: 'map', // The ID of the HTML element that will contain the map
+          style: 'mapbox://styles/mapbox/streets-v11',
+          center: [longitude, latitude],
+          zoom: 12
+        });
+
+        // Add a marker to the map
+        const marker = new mapboxgl.Marker()
+          .setLngLat([longitude, latitude])
+          .addTo(map);
+      })
+      .catch(error => console.error(error));
+  </script>
+
+
+
+
+<button class="signout" role=button onclick="window.location.href='/logout'">Log Out</button>
+
 </body>
-
-
-
 </html>
 
 
