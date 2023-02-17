@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="zoom: 115%">
 
 <title>WeGo Log In Page</title>
 
@@ -7,9 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
-  <link href="../styles/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/x-icon" href="../static/WeGo.png">
+  <link href="../styles/style.css" rel="stylesheet"  type="text/css" />
 </head>
-<br></br>
+<br>
 
 <body>
   <br></br>
@@ -18,20 +19,26 @@
     <br></br>
     <h1 class="title">Welcome to WeGo!</h1>
   </center>
-  <br></br>
+  <br>
   <center>
     <div class="box" method="POST" name="LoginForm">
       <h1 class="textInForm">Log In</h1>
       <div class="container">
+        <br>
+
+        <div class="email">
+        <label for="username" class="textInForm" ><b>Username:</b></label>
+        <input type="text" placeholder=" johndoe" id="username">
         <br></br>
-        <label for="username" class="textInForm"><b>Username:</b></label>
-        <input type="text" placeholder="Enter Username" id="username">
-        <br></br>
+        </div>
+       
         <label for="password" class="textInForm"><b>Password:</b></label>
-        <input type="password" placeholder="Enter Password" id="password">
+        <input type="password" placeholder=" *********" id="password">
         <br></br>
+        
         <button type="submit" class="boxButton" onclick="validateUser()">Log in</button>
         <br></br>
+    
         Don't have an account?
         <a href="signup_page.html">Sign up</a>
       </div>
@@ -39,31 +46,31 @@
   </center>
 </body>
 <script>
-  function validateUser() {
+   function validateUser() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
     if (username == "") {
-      alert("Please input your username.");
+      alert("Please Input Your Username.");
       document.LoginForm.username.focus();
       window.location.href = "index.html";
       return false;
     }
 
     else if (password == "") {
-      alert("Please input your password.");
+      alert("Please Input Your Password.");
       document.LoginForm.password.focus();
       window.location.href = "index.html";
       return false;
     }
 
-    else if (username == "wego22" && password == "wego22") {
-      alert("Welcome, " + username);
+    else if (username == "" && password == "") {
+      alert("Welcome! " + username + "." + "\nYou Will Now be Redirected to the Order Page.");
       window.location.href = "ordering_page.html";
     }
 
     else {
-      alert("Incorrect username/password!");
+      alert("Incorrect Email/Password!");
       window.location.href = "index.html";
     }
   }
