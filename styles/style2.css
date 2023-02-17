@@ -1,103 +1,108 @@
 form {
-    width: 25%;
-    float: left;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #d9d9d9;;
-  
-    
-  }
+  width: 25%;
+  float: left;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #d9d9d9;;
 
-  label {
-    width: 100%;
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
+} 
+ 
 
-  input, select {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
+#state{
+  width: 65%;
+} 
 
-  #logo {
-    width: 65px;
-    height: 65px;
-    float: left;
-    margin-right: 20px;
-  }
 
-  /* Add styling for the map image */
-  #map {
-    width: 70%;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-    .vertical-border {
-    border-left: 5px solid #284b63;;
-    height: 100%;
-    position: absolute;
-    left: 29.655%;
-    bottom: 0;
-    opacity: 100%;
-  }
+ label {
+  /* width: 100%;  */
+  display:inline-block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}  
 
-    html, body 
-  {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: "Trebuchet MS";
-    background: #3c6e71;
-    
-  }
+input, select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+} 
 
-    .orderButtonDiv
-  {
-    padding-right:50px;
-    padding-bottom: 20px;
-  }
-  .orderButton
-  {
-    background: linear-gradient(90deg, #3c6e72, #284b63);
-    color: #d9d9d9;
-    width: 80%;
-    padding: 12px;
-    transition-duration: 0.4s;
-    text-align: center;
+#logo {
+  width: 65px;
+  height: 65px;
+  float: left;
+  margin-right: 20px;
+}
 
-    position: relative; 
-    left: 65px;
-    top: 2px;
-    
-  }
+/* Add styling for the map image */
+#map {
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+  .vertical-border {
+  border-left: 5px solid #284b63;;
+  height: 100%;
+  position: absolute;
+  left: 29.655%;
+  bottom: 0;
+  opacity: 100%;
+}
 
-  .orderButton:hover 
-  {
-    background-color: #3c6e71; 
-    color: white;
-  }
-
-  @media only screen and (max-width: 600px) {
-    .element {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-
-  .box
+  html, body 
 {
-  width:340px;
-  padding:60px;
-  left: 60px;
-  background: #d9d9d9;
-  border: 7px solid #284b63;
-  position: relative;
+   margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Trebuchet MS";
+  background: #3c6e71;
+  
+}
+
+  .orderButtonDiv
+{
+  padding-right:50px;
+  padding-bottom: 20px;
+}
+.orderButton
+{
+  background: linear-gradient(90deg, #3c6e72, #284b63);
+  color: #d9d9d9;
+  width: 80%;
+  padding: 12px;
+  transition-duration: 0.4s;
+  text-align: center;
+
+  position: relative; 
+  left: 65px;
+  top: 2px;
+  
+}
+
+.orderButton:hover 
+{
+  background-color: #3c6e71; 
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .element {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.box
+{
+width:340px;
+padding:60px;
+left: 60px;
+background: #d9d9d9;
+border: 7px solid #284b63;
+position: relative;
 }
 
 
@@ -107,47 +112,46 @@ form {
 
 
 .signout {
-    transition-duration: 0.4s;
-  }
-  
-  .signout:hover {
-    background-color: #ff0202; /* Green */
-    color: white;
-  }
+  transition-duration: 0.4s;
+}
+
+.signout:hover {
+  background-color: #ff0202; /* Green */
+  color: white;
+}
 
 
- .signout {
-    align-items: center;
-    background-color: #d9d9d9;
-    background-position: 0 0;
-    border: 1px solid #d9d9d9;
-    border-radius: 11px;
-    box-sizing: border-box;
-    color: #000000;
-    cursor: pointer;
-    display: flex;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 25px;
-    list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
-    padding: 2px 12px;
-    text-align: left;
-    text-decoration: none;
-    text-shadow: none;
-    text-underline-offset: 1px;
-    transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    word-break: break-word;
-  }
+.signout {
+  align-items: center;
+  background-color: #d9d9d9;
+  background-position: 0 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 25px;
+  list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
+  padding: 2px 12px;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-underline-offset: 1px;
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
 
 
-  .signout{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 5px 20px;
-    margin: 12px
-  }
+.signout{
+  position: absolute;
+ 
+
+  margin: 12px
+} 

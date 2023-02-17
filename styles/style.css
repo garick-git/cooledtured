@@ -6,6 +6,14 @@ html, body
   background: #3c6e71;
 }
 
+.username{
+  margin-left: -1.5%;
+}
+
+#signuptext{
+  display: block;
+}
+
 .box
 {
   width:340px;
