@@ -40,11 +40,21 @@
         <br></br>
     
         Don't have an account?
-        <a href="signup_page.html">Sign up</a>
+
+        <button id="myButton">Sign Up</button>
       </div>
     </div>
   </center>
 </body>
+
+<script>
+    const a = document.getElementById('myButton');
+  button.addEventListener('click', () => {
+    window.location.href = '/login';
+  });
+</script>
+
+
 <script>
    function validateUser() {
     var username = document.getElementById("username").value;
