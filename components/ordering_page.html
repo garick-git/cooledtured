@@ -50,6 +50,27 @@
     <br> -->
     <hr>
     <br>
+
+    <label for="vaccine-type">Vaccine Type:</label>
+    <select name="vaccine-type" id="vaccine-type">
+      <option value="SL" selected disabled>- Select -</option>
+      <option value="anthrax">Anthrax</option>
+      <option value="cholera">Cholera</option>
+      <option value="covid">Covid-19</option>
+      <option value="hep-b">Hepatitis A</option>
+      <option value="hep-b">Hepatitis B</option>
+      <option value="hpv">Human Papillomavirus (HPV)</option>
+      <option value="measles">Measles</option>
+      <option value="mumps">Mumps</option>
+      <option value="polio">Polio</option>
+      <option value="rabies">Rabies</option>
+      <option value="flu">Seasonal Influenza (Flu)</option>
+      <option value="shingles">Shingles</option>
+      <option value="smallpox">Smallpox</option>
+      <option value="tetanus">Tetanus</option>
+      <option value="tuberculosis">Tuberculosis</option>
+      <option value="typhoid">Typhoid Fever</option>
+    </select>
  
     <label for="quantity">Quantity:</label>
     <input type="number" id="quantity" placeholder="Enter Quantity" style="width: 35%;" name="quantity">
@@ -81,7 +102,7 @@
 
       <label for="state">State:</label>
       <select id="state" name="state">
-        <option value="SL">- Select -</option>
+        <option value="SL" selected disabled>- Select -</option>
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
         <option value="AZ">Arizona</option>
@@ -142,7 +163,7 @@
     <br>
   
     <div class="orderButtonDiv">
-      <button type="submit" class="orderButton" onclick="getUser()">Submit Order</button>
+      <button type="submit" class="orderButton">Submit Order</button>
     </div>
 
    
