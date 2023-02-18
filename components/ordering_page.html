@@ -11,10 +11,12 @@
   <title>WeGo Order Submission Page</title>
 
   <link href="../styles/style2.css" rel="stylesheet" type="text/css"/>
-
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
-
+  <!-- Map API Scripts -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+  <!-- Internal Scripts -->
+  <script src="../scripts/TrackingPage.js"></script>
+  
   </head>
 
 <body>
@@ -33,7 +35,7 @@
 
    
    <!-- Temp-->
-    <label style="font-size: x-large;">Welcome First Name + Last Name!</label>
+    <label id="welcome-label">Welcome, First Name!</label>
     <br>
     <br>
 
@@ -140,7 +142,7 @@
     <br>
   
     <div class="orderButtonDiv">
-      <button type="submit" class="orderButton">Submit Order</button>
+      <button type="submit" class="orderButton" onclick="getUser()">Submit Order</button>
     </div>
 
    
@@ -153,7 +155,7 @@
   
   
 
-  <script src="../scripts/TrackingPage.js"></script>
+  
 
   <script>
       // Make a POST request to the '/order' endpoint
@@ -187,6 +189,8 @@
           .addTo(map);
       })
       .catch(error => console.error(error));
+
+      
   </script>
 
 
