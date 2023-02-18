@@ -4,16 +4,13 @@ form {
   padding: 20px;
   font-family: Arial, sans-serif;
   background-color: #d9d9d9;;
-
 } 
  
-
 #state{
   width: 65%;
 } 
 
-
- label {
+label {
   /* width: 100%;  */
   display:inline-block;
   font-weight: bold;
@@ -42,7 +39,8 @@ input, select {
   right: 0;
   top: 0;
 }
-  .vertical-border {
+
+.vertical-border {
   border-left: 5px solid #284b63;;
   height: 100%;
   position: absolute;
@@ -51,8 +49,7 @@ input, select {
   opacity: 100%;
 }
 
-  html, body 
-{
+html, body {
    margin: 0;
   padding: 0;
   height: 100%;
@@ -62,13 +59,12 @@ input, select {
   
 }
 
-  .orderButtonDiv
-{
+.orderButtonDiv {
   padding-right:50px;
   padding-bottom: 20px;
 }
-.orderButton
-{
+
+.orderButton {
   background: linear-gradient(90deg, #3c6e72, #284b63);
   color: #d9d9d9;
   width: 80%;
@@ -82,8 +78,7 @@ input, select {
   
 }
 
-.orderButton:hover 
-{
+.orderButton:hover {
   background-color: #3c6e71; 
   color: white;
 }
@@ -95,8 +90,7 @@ input, select {
   }
 }
 
-.box
-{
+.box {
 width:340px;
 padding:60px;
 left: 60px;
@@ -105,21 +99,11 @@ border: 7px solid #284b63;
 position: relative;
 }
 
-
-
-
-
-
-
-.signout {
-  transition-duration: 0.4s;
-}
-
+/* Signout Button */
 .signout:hover {
   background-color: #ff0202; /* Green */
   color: white;
 }
-
 
 .signout {
   align-items: center;
@@ -141,21 +125,18 @@ position: relative;
   text-shadow: none;
   text-underline-offset: 1px;
   transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  transition-duration: 0.4s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
   word-break: break-word;
-}
-
-
-.signout{
   position: absolute;
- left: 0;
- bottom: 0;
-
+  left: 0;
+  bottom: 0;
   margin: 12px
 }
+
 /*vehicle logo*/
 .marker {
   background-image: url('../static/vehicle.png');
