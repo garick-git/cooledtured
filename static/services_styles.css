@@ -11,6 +11,8 @@ html, body {
   display: flex;
   min-height: 100%;
   flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
 .row {
