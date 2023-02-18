@@ -16,7 +16,7 @@
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
   <!-- Internal Scripts -->
   <script src="../scripts/TrackingPage.js"></script>
-  
+  <script src="../scripts/orderingScripts.js"></script> 
   </head>
 
 <body>
@@ -35,7 +35,7 @@
 
    
    <!-- Temp-->
-    <label id="welcome-label">Welcome, First Name!</label>
+    <label id="welcome-label">Welcome, {First Name}!</label>
     <br>
     <br>
 
@@ -52,7 +52,7 @@
     <br>
 
     <label for="vaccine-type">Vaccine Type:</label>
-    <select name="vaccine-type" id="vaccine-type">
+    <select name="vaccine-type" id="vaccine-type" onchange="calcPrice()">
       <option value="SL" selected disabled>- Select -</option>
       <option value="anthrax">Anthrax</option>
       <option value="cholera">Cholera</option>
@@ -73,7 +73,10 @@
     </select>
  
     <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" placeholder="Enter Quantity" style="width: 35%;" name="quantity">
+    <input type="number" id="quantity" placeholder="Enter Quantity" style="width: 35%;" name="quantity" onchange="calcPrice()">
+    <br>
+    <label for="price">Total:</label>
+    <p id="total-price">$0.00</p>
     <br>
     <hr>
     <br>
