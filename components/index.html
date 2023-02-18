@@ -83,7 +83,7 @@
               if (data.message === 'Login successful') {
                 console.log('Success:', data.message);
                 alert('Logged in successfully!'); // Alert the user on successful login
-                window.location.href = '/order';
+                window.location.href = '/services';
               } else {
                 throw new Error(data.error);
               }
