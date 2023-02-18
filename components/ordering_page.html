@@ -152,53 +152,50 @@
   <body>
     <div id='map'></div>
   </div>
-  
-  
-
-  
-
-  <script>
-      // Make a POST request to the '/order' endpoint
-      fetch('/order', {
-        method: 'POST',
-        body: JSON.stringify({ /* any necessary data */ }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-
-
-
-      .then(response => response.json())
-      .then(data => {
-        // Extract the latitude and longitude from the response data
-        const { longitude, latitude} = data;
-
-        // Create the Mapbox API using the latitude and longitude
-        mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
-        const map = new mapboxgl.Map({
-          container: 'map', // The ID of the HTML element that will contain the map
-          style: 'mapbox://styles/mapbox/streets-v11',
-          center: [longitude, latitude],
-          zoom: 12
-        });
-
-        // Add a marker to the map
-        const marker = new mapboxgl.Marker()
-          .setLngLat([longitude, latitude])
-          .addTo(map);
-      })
-      .catch(error => console.error(error));
-
-      
-  </script>
-
-
 
 
 <button class="signout" role=button onclick="window.location.href='/logout'">Log Out</button>
 
 </body>
+
+
+  
+
+<script>
+  // Make a POST request to the '/order' endpoint
+  fetch('/order', {
+    method: 'POST',
+    body: JSON.stringify({ /* any necessary data */ }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+
+
+
+  .then(response => response.json())
+  .then(data => {
+    // Extract the latitude and longitude from the response data
+    const { longitude, latitude} = data;
+
+    // Create the Mapbox API using the latitude and longitude
+    mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+    const map = new mapboxgl.Map({
+      container: 'map', // The ID of the HTML element that will contain the map
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [longitude, latitude],
+      zoom: 12
+    });
+
+    // Add a marker to the map
+    const marker = new mapboxgl.Marker()
+      .setLngLat([longitude, latitude])
+      .addTo(map);
+  })
+  .catch(error => console.error(error));
+
+  
+</script>
 </html>
 
 
