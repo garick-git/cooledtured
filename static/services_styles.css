@@ -5,29 +5,41 @@ html, body {
   width: 100%;
   font-family: "Trebuchet MS";
   background: #3c6e71;
-  
 }
 
-.button {  
+.pluginContainer {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.pluginIcons {
+  flex: 1;
+}
+
+.button {
   height: 470px !important;
   width: 470px !important;
   border-radius: 25px;
-  background-color: white;  
-  color: black;  
+  background-color: white;
+  color: black;
   text-align: center;
-  top: 245;
-  margin: 20px 235px 120px 235px;
-  justify-content: center;
-  align-items: center;
-} 
+  margin: 20px;
+}
 
 h1 {
   text-align: center;
-  font-size: 76;
+  font-size: 76px;
 }
 
+
 .signout:hover {
-  background-color: #ff0202; /* Green */
+  background-color: #ff0202;
   color: white;
 }
 
@@ -57,7 +69,7 @@ h1 {
   touch-action: manipulation;
   white-space: nowrap;
   word-break: break-word;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   margin: 12px;
