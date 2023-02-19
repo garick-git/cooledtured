@@ -1,5 +1,6 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibXNjeWhldiIsImEiOiJjbGRjZ2NxMWcwNHlqM3Ftdnk5bWxpNTA2In0.eVb9A1KnXMC8RXlJjetGpw';
 var map
+var carExists = false
 
 async function getCoords() {
     event.preventDefault()
@@ -76,8 +77,11 @@ function startRoute(currMap, destination) {
                 'line-color': '#007cbf'
             }
         });
-        // Add the route to the map
-
+        // Check if car exists
+        if (carExists) {
+            console.log("Car already en route")
+            return
+        }
 
         // Fit the map to the route
         var bounds = data.routes[0].geometry.coordinates.reduce(function (bounds, coord) {
@@ -91,6 +95,7 @@ function startRoute(currMap, destination) {
             anchor: 'center'
         }).setLngLat(start).addTo(currMap);
 
+        carExists = true;
         // Animate the car along the route
         var index = 0;
 
