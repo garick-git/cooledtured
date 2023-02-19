@@ -65,13 +65,13 @@
       <label for="deliver-to" style="font-size: x-large;">Shipping Address</label>
       <br>
       <br>
-      <div id="street">
+      <div class="street">
       <label for="street">Street:</label>
       <input type="text" id="street" placeholder="5180 Whiff Oaf Lane" name="street"><br>
       </div>
-      <label for="city" id="city">City:</label>
+      <label for="city" class="city">City:</label>
       <input type="text" id="city" placeholder="Austin" style="width: 30%;" name="city">
-      <label for="zipcode" id="zipcode" style="margin-left: 4%;">Zip:</label>
+      <label for="zipcode" class="zipcode" style="margin-left: 4%;">Zip:</label>
       <input type="text" id="zipcode" placeholder="78125" name="zipcode" pattern="[0-9]{5}" style="width: 20%;" maxlength="5" required> 
       <br>
       <label for="state">State:</label>
@@ -132,7 +132,9 @@
       <br>
       <br>
       <div class="orderButtonDiv">
-        <button type="submit" class="orderButton">Submit Order</button>
+        <button type="submit" class="orderButton" onclick="getCoords().then((coords) => {
+                startRoute(map, coords)
+                });">Submit Order</button>
       </div>
     </form>
   </div>
@@ -144,43 +146,12 @@
 </body>
 
 <script src="../static/TrackingPage.js"></script>
-  
 
 <script>
-  // // Make a POST request to the '/order' endpoint
-  // fetch('/order', {
-  //   method: 'POST',
-  //   body: JSON.stringify({ /* any necessary data */ }),
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   }
-  // })
+    createMap()
 
-
-
-  // .then(response => response.json())
-  // .then(data => {
-  //   // Extract the latitude and longitude from the response data
-  //   const { longitude, latitude} = data;
-
-  //   // Create the Mapbox API using the latitude and longitude
-  //   mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
-  //   const map = new mapboxgl.Map({
-  //     container: 'map', // The ID of the HTML element that will contain the map
-  //     style: 'mapbox://styles/mapbox/streets-v11',
-  //     center: [longitude, latitude],
-  //     zoom: 12
-  //   });
-
-  //   // Add a marker to the map
-  //   const marker = new mapboxgl.Marker()
-  //     .setLngLat([longitude, latitude])
-  //     .addTo(map);
-  // })
-  // .catch(error => console.error(error));
-
-  
 </script>
+
 </html>
 
 
